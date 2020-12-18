@@ -70,25 +70,29 @@ body {
 
 .group {
     border-bottom: 1px solid #E8E8EA;
-    padding: 19px 0;
-    transition: color 0.1s linear;
+    padding-top: 19px;
+    font-size: 13px;
 }
 
 .group:first-child {
     padding-top: 0;
 }
 
-.group:hover{
+.question-div {
+    padding-bottom: 19px;
+    transition: color 0.1s linear;
+}
+
+.question-div:hover {
     cursor: pointer;
     color: #F47B56;
 }
 
 .question {
     position: relative;
-    font-size: 13px;
 }
 
-.question::after{
+.question::after {
     content: '';
     position: absolute;
     top: calc(50% - 3.5px);
@@ -96,10 +100,29 @@ body {
     width: 10px;
     height: 7px;
     background: no-repeat url(images/icon-arrow-down.svg);
+    transition: 0.3s linear;
+}
+
+.selected {
+    font-weight: 700;
+}
+
+.selected::after {
+    transform: rotateZ(-180deg);
 }
 
 .answer {
     display: none;
+    width: 100%;
+    color: #787887;
+    transition: 1s linear;
+    line-height: 1.3em;
+}
+
+.display-answer {
+    display: flex;
+    align-items: center;
+    animation: 0.7s cubic-bezier(.24,.82,.77,.37) forwards displayAnswer;
 }
 
 .attribution {
@@ -109,4 +132,20 @@ body {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@keyframes displayAnswer{
+    0%{
+        height: 0px;
+        margin: 0;
+        opacity: 0;
+    }
+    70%{
+        opacity: 0;
+    }
+    100%{
+        height: 40px;
+        margin: 13px 0;
+        opacity: 1;
+    }
 }
