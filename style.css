@@ -122,7 +122,7 @@ body {
 .display-answer {
     display: flex;
     align-items: center;
-    animation: 0.7s cubic-bezier(.24,.82,.77,.37) forwards displayAnswer;
+    animation: 0.7s ease-in forwards displayAnswer;
 }
 
 .attribution {
@@ -140,8 +140,12 @@ body {
         margin: 0;
         opacity: 0;
     }
-    70%{
+    60%{
         opacity: 0;
+        color: #F47B56;
+    }
+    90%{
+        color: #F47B56;
     }
     100%{
         height: 40px;
