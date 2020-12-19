@@ -122,7 +122,15 @@ body {
 .display-answer {
     display: flex;
     align-items: center;
-    animation: 0.7s ease-in forwards displayAnswer;
+    animation: 0.7s linear forwards displayAnswer;
+}
+
+.remove-answer{
+    height: 0;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    animation: 0.7s linear forwards removeAnswer;
 }
 
 .attribution {
@@ -137,7 +145,7 @@ body {
 @keyframes displayAnswer{
     0%{
         height: 0px;
-        margin: 0;
+        margin-bottom: 19px;
         opacity: 0;
     }
     60%{
@@ -151,5 +159,24 @@ body {
         height: 40px;
         margin: 13px 0;
         opacity: 1;
+    }
+}
+
+@keyframes removeAnswer{
+    0%{
+        height: 40px;
+        margin: 13px 0;
+        opacity: 1;
+    }
+
+    40%{
+        opacity: 0;
+    }
+
+    100%{
+        height: 0px;
+        margin: 0;
+        margin-bottom: 19px;
+        opacity: 0;
     }
 }

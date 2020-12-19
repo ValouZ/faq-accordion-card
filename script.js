@@ -11,28 +11,44 @@ for (let i = 0; i < questionDiv.length; i++) {
 function displayName() {
     let answer = this.parentNode.getElementsByClassName("answer")[0];
     let question = this.getElementsByClassName("question")[0];
-    let status = alreadySelected(question);
 
     // If we are clicking the question that already has the "selected" class, 
     // we remove it
-    if (status) {
+    if (alreadySelected(question)) {
         // Remove font-weight bold to the question and add the standard padding
         question.classList.remove("selected");
-        question.parentNode.style.paddingBottom = "19px";
+        
 
         // Remove the answer
-        answer.classList.remove("display-answer");
+        answer.classList.add("remove-answer");
+        setTimeout(() => {
+            answer.classList.remove("remove-answer");
+            question.parentNode.style.paddingBottom = "19px";
+            answer.classList.remove("display-answer");
+        }, 700);
+        
     }
     // In the other case, we remove all the "selected" class and we add it
     // to the clicked one
     else {
         for (let i = 0; i < questions.length; i++) {
-            // Remove font-weight bold to questions and add the standard padding
-            questions[i].classList.remove("selected");
-            questions[i].parentNode.style.paddingBottom = "19px";
 
-            // Remove the answer
-            answers[i].classList.remove("display-answer");
+            if (alreadySelected(questions[i])){
+                questions[i].classList.remove("selected");
+    
+                // Remove the answer
+
+                answers[i].classList.add("remove-answer");
+                setTimeout(() => {
+                    answers[i].classList.remove("remove-answer");
+                    questions[i].parentNode.style.paddingBottom = "19px";
+                    answers[i].classList.remove("display-answer");
+                }, 700);
+
+                
+            }
+            // Remove font-weight bold to questions and add the standard padding
+            
         }
         // Add font-weight bold to the question and remove the standard padding
         question.classList.add("selected");
