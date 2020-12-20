@@ -17,7 +17,7 @@ function displayName() {
     if (alreadySelected(question)) {
         // Remove font-weight bold to the question and add the standard padding
         question.classList.remove("selected");
-        
+
 
         // Remove the answer
         answer.classList.add("remove-answer");
@@ -26,16 +26,16 @@ function displayName() {
             question.parentNode.style.paddingBottom = "19px";
             answer.classList.remove("display-answer");
         }, 400);
-        
+
     }
     // In the other case, we remove all the "selected" class and we add it
     // to the clicked one
     else {
         for (let i = 0; i < questions.length; i++) {
 
-            if (alreadySelected(questions[i])){
+            if (alreadySelected(questions[i])) {
                 questions[i].classList.remove("selected");
-    
+
                 // Remove the answer
 
                 answers[i].classList.add("remove-answer");
@@ -45,10 +45,10 @@ function displayName() {
                     answers[i].classList.remove("display-answer");
                 }, 400);
 
-                
+
             }
             // Remove font-weight bold to questions and add the standard padding
-            
+
         }
         // Add font-weight bold to the question and remove the standard padding
         question.classList.add("selected");
