@@ -152,6 +152,7 @@ body {
 @media screen and (min-width: 1440px) {
     .faq-bg {
         flex-direction: row;
+        align-items: unset;
         border-radius: 23px;
         width: 920px;
         height: 509px;
@@ -168,7 +169,7 @@ body {
         top: 0;
         left: 0;
         height: 509px;
-        width: 389px;
+        width: 391px;
     }
     .shadow {
         position: absolute;
@@ -183,7 +184,7 @@ body {
         top: calc(50% - calc(359px / 2));
         left: -84px;
         height: 359px;
-        width: 472px;
+        width: 473px;
         background: no-repeat url("images/illustration-woman-online-desktop.svg");
     }
     .box {
@@ -193,6 +194,18 @@ body {
         height: 184px;
         width: 191px;
         background: no-repeat url("images/illustration-box-desktop.svg");
+    }
+    .faq {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: unset;
+        margin-top: 65px;
+        margin-left: 88px;
+    }
+    .group {
+        padding-top: 19px;
+        font-size: 14px;
     }
 }
 
