@@ -25,7 +25,7 @@ function displayName() {
             answer.classList.remove("remove-answer");
             question.parentNode.style.paddingBottom = "19px";
             answer.classList.remove("display-answer");
-        }, 700);
+        }, 400);
         
     }
     // In the other case, we remove all the "selected" class and we add it
@@ -43,7 +43,7 @@ function displayName() {
                     answers[i].classList.remove("remove-answer");
                     questions[i].parentNode.style.paddingBottom = "19px";
                     answers[i].classList.remove("display-answer");
-                }, 700);
+                }, 400);
 
                 
             }
